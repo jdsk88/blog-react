@@ -1,0 +1,53 @@
+
+.users-box {
+    border: black 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90vw;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    position: relative;
+    top: 15px;
+    bottom: 90px;
+    z-index: -1;
+  }
+  .user-box {
+    border: red 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .user-data{
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .user-box__user-name{
+  order: 8;
+  }
+  .user-box__first-name{
+  order: 7;
+  }
+  .user-box__last-name{
+  order: 6;
+  }
+  .user-box__email{
+  order: 5;
+  }
+  .user-box__tel{
+  order: 4;
+  }
+  .user-box__date-of-join{
+  order: 3;
+  }
+  .user-box__default-view{
+  order: 2;
+  }
+  .user-box__user-id{
+  order: 1;
+  }
+  

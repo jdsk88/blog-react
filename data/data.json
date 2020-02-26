@@ -1,0 +1,387 @@
+{
+    "articles": [{
+            "id": 100,
+            "title": "Man must explore, and this is exploration at its greatest",
+            "subtitle": "Problems look mighty small from 150 miles up",
+            "userId": 1,
+            "date": "2019-09-23T22:00:00.000Z",
+            "last_update": "2019-09-23T22:00:00.000Z",
+            "key_words": "AMERICA",
+            "likes": 100,
+            "displays_q": 359,
+            "body": ""
+        },
+        {
+            "id": 101,
+            "title": "I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.",
+            "subtitle": "",
+            "userId": 1,
+            "date": "2019-09-17T22:00:00.000Z",
+            "last_update": "2019-09-23T22:00:00.000Z",
+            "key_words": "AMERICA",
+            "likes": 100,
+            "displays_q": 359,
+            "body": ""
+        },
+        {
+            "id": 102,
+            "title": "Science has not yet mastered prophecy",
+            "subtitle": "We predict too much for the next year and yet far too little for the next ten.",
+            "userId": 1,
+            "date": "2019-08-23T22:00:00.000Z",
+            "last_update": "2019-09-23T22:00:00.000Z",
+            "key_words": "AMERICA",
+            "likes": 100,
+            "displays_q": 359,
+            "body": ""
+        },
+        {
+            "id": 103,
+            "title": "Failure is not an option",
+            "subtitle": "Many say exploration is part of our destiny, but it’s actually our duty to future generations.",
+            "userId": 1,
+            "date": "2019-07-07T22:00:00.000Z",
+            "last_update": "2019-09-23T22:00:00.000Z",
+            "key_words": "AMERICA",
+            "likes": 100,
+            "displays_q": 359,
+            "body": ""
+        },
+        {
+            "id": 103,
+            "title": "Failure is not an option",
+            "subtitle": "Many say exploration is part of our destiny, but it’s actually our duty to future generations.",
+            "userId": 1,
+            "date": "2019-07-07T22:00:00.000Z",
+            "last_update": "2019-09-23T22:00:00.000Z",
+            "key_words": "AMERICA",
+            "likes": 100,
+            "displays_q": 359,
+            "body": ""
+        }
+    ],
+    "comments": [{
+        "id": 100,
+        "postId": 100,
+        "userId": 1,
+        "user_name": "john_doe",
+        "body": "How do you like my post?",
+        "date": "2019-10-23T22:00:00.000Z"
+    }],
+    "users": [{
+            "_id": "5e5504adc3d2ff03c95af6b3",
+            "index": 0,
+            "api_key": "f15d0230-c198-401c-bf54-0be4722e07b1",
+            "isActive": true,
+            "first_name": "Hopper",
+            "last_name": "Dawson",
+            "age": 24,
+            "gender": "male",
+            "eyeColor": "green",
+            "picture": "http://placehold.it/32x32",
+            "company": "SIGNIDYNE",
+            "email": "hopperdawson@signidyne.com",
+            "phone": "+1 (855) 534-2762",
+            "address": "520 Cambridge Place, Boling, Rhode Island, 1919",
+            "about": "Exercitation veniam ex pariatur exercitation dolor mollit tempor sit laborum id. Consequat amet eiusmod aliqua sit do occaecat sunt. Deserunt laborum quis voluptate eu ipsum est qui nisi tempor deserunt aliquip eu magna.\r\n",
+            "balance": "$1,529.37",
+            "registered": "2016-10-16T04:36:03 -02:00",
+            "latitude": 83.41075,
+            "longitude": -32.08343,
+            "tags": [
+                "ea",
+                "elit",
+                "dolor",
+                "sint",
+                "nostrud",
+                "ea",
+                "ipsum"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Eliza Love"
+                },
+                {
+                    "id": 1,
+                    "name": "Schneider Bradford"
+                },
+                {
+                    "id": 2,
+                    "name": "Pam Rosa"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 5 unread messages.",
+            "favoriteFruit": "strawberry"
+        },
+        {
+            "_id": "5e5504adbbcc19aab207052e",
+            "index": 1,
+            "api_key": "3f9230ac-a4e9-40b1-9228-c6136b4e04d5",
+            "isActive": true,
+            "first_name": "Heather",
+            "last_name": "Estrada",
+            "age": 21,
+            "gender": "female",
+            "eyeColor": "blue",
+            "picture": "http://placehold.it/32x32",
+            "company": "ISOLOGIX",
+            "email": "heatherestrada@isologix.com",
+            "phone": "+1 (933) 430-3960",
+            "address": "969 Highlawn Avenue, Bethany, Alabama, 8909",
+            "about": "Est id velit enim culpa et eiusmod. Aliquip aute pariatur amet tempor dolor laborum aute elit exercitation. Officia non do laborum incididunt proident sint aliqua ad commodo voluptate ut. Proident ut culpa quis in mollit do. Mollit do quis pariatur tempor occaecat Lorem occaecat dolore magna proident incididunt qui. Minim ea id eiusmod enim et Lorem. Dolor consectetur ullamco dolore reprehenderit sunt mollit.\r\n",
+            "balance": "$2,348.30",
+            "registered": "2018-01-22T12:29:19 -01:00",
+            "latitude": -84.217635,
+            "longitude": -90.414408,
+            "tags": [
+                "cillum",
+                "aliquip",
+                "anim",
+                "nulla",
+                "laboris",
+                "proident",
+                "qui"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Mckay Nunez"
+                },
+                {
+                    "id": 1,
+                    "name": "Sheree Watson"
+                },
+                {
+                    "id": 2,
+                    "name": "Paulette Noel"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 2 unread messages.",
+            "favoriteFruit": "strawberry"
+        },
+        {
+            "_id": "5e5504ad9a0611733ba0888a",
+            "index": 2,
+            "api_key": "5b07ac52-f367-437d-8fe4-d74581a36734",
+            "isActive": true,
+            "first_name": "Wyatt",
+            "last_name": "Moran",
+            "age": 29,
+            "gender": "male",
+            "eyeColor": "blue",
+            "picture": "./img/pic.png",
+            "company": "NAVIR",
+            "email": "wyattmoran@navir.com",
+            "phone": "+1 (847) 443-2291",
+            "address": "779 Fleet Place, Salvo, Utah, 7332",
+            "about": "Reprehenderit culpa quis est et aute velit laboris veniam minim. Eiusmod occaecat qui duis ad incididunt. Laboris in culpa minim magna ut consectetur ut cillum officia fugiat laboris ex adipisicing proident. Ullamco fugiat ad esse do quis. Magna anim mollit enim cupidatat sunt laboris. Qui sit veniam laborum mollit reprehenderit consequat excepteur laborum aute esse veniam exercitation. Proident excepteur nulla aliqua veniam adipisicing do consectetur laboris.\r\n",
+            "balance": "$3,244.83",
+            "registered": "2019-11-16T04:30:05 -01:00",
+            "latitude": -68.691603,
+            "longitude": 153.443901,
+            "tags": [
+                "culpa",
+                "exercitation",
+                "occaecat",
+                "est",
+                "minim",
+                "mollit",
+                "laborum"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Buckley Marks"
+                },
+                {
+                    "id": 1,
+                    "name": "Hicks Glenn"
+                },
+                {
+                    "id": 2,
+                    "name": "Marissa Bass"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 9 unread messages.",
+            "favoriteFruit": "banana"
+        },
+        {
+            "_id": "5e5504ad9c6158769a292a4e",
+            "index": 3,
+            "api_key": "e47a7487-8765-4928-8337-4ebe25ef130a",
+            "isActive": true,
+            "first_name": "Therese",
+            "last_name": "Armstrong",
+            "age": 34,
+            "gender": "female",
+            "eyeColor": "brown",
+            "picture": "http://placehold.it/32x32",
+            "company": "MAGNINA",
+            "email": "theresearmstrong@magnina.com",
+            "phone": "+1 (872) 474-2208",
+            "address": "309 Willow Street, Alleghenyville, Vermont, 3172",
+            "about": "Sint anim sunt est labore mollit ullamco eiusmod nostrud id exercitation. Incididunt voluptate commodo veniam irure aute consectetur laborum et ea. Irure aute ut ea Lorem in sunt est amet deserunt excepteur commodo qui occaecat.\r\n",
+            "balance": "$1,241.92",
+            "registered": "2015-06-07T11:17:59 -02:00",
+            "latitude": -0.648144,
+            "longitude": 170.880049,
+            "tags": [
+                "enim",
+                "ipsum",
+                "ea",
+                "voluptate",
+                "do",
+                "proident",
+                "officia"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Ola Phelps"
+                },
+                {
+                    "id": 1,
+                    "name": "Jami Boyle"
+                },
+                {
+                    "id": 2,
+                    "name": "Lynch White"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 1 unread messages.",
+            "favoriteFruit": "banana"
+        },
+        {
+            "_id": "5e5504ad0822a4056708fbcb",
+            "index": 4,
+            "api_key": "c0be2c63-169a-4a11-8cfa-3c156d6eb3ac",
+            "isActive": false,
+            "first_name": "Ellen",
+            "last_name": "Pate",
+            "age": 29,
+            "gender": "female",
+            "eyeColor": "green",
+            "picture": "http://placehold.it/32x32",
+            "company": "SPLINX",
+            "email": "ellenpate@splinx.com",
+            "phone": "+1 (882) 509-2601",
+            "address": "167 Commercial Street, Epworth, New Hampshire, 667",
+            "about": "Mollit eiusmod pariatur proident sint esse deserunt fugiat ea sint ea elit aute. Laboris et eu in eu cupidatat dolor ad non. Deserunt consectetur esse aliqua quis aliquip aliqua anim irure mollit ut in sint. Ut quis cillum aliqua excepteur in pariatur non mollit ullamco ex. Lorem nostrud proident ea officia do consequat pariatur. Esse velit culpa sunt incididunt duis. Non elit labore commodo labore dolore minim adipisicing cillum ex cillum veniam aute laboris consectetur.\r\n",
+            "balance": "$1,223.45",
+            "registered": "2017-05-29T08:12:29 -02:00",
+            "latitude": 71.956554,
+            "longitude": 113.672607,
+            "tags": [
+                "deserunt",
+                "amet",
+                "irure",
+                "laborum",
+                "non",
+                "cillum",
+                "mollit"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Heath Noble"
+                },
+                {
+                    "id": 1,
+                    "name": "Darla Arnold"
+                },
+                {
+                    "id": 2,
+                    "name": "Clayton Garner"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 8 unread messages.",
+            "favoriteFruit": "strawberry"
+        },
+        {
+            "_id": "5e5504ad0e90f6994685c77f",
+            "index": 5,
+            "api_key": "ed384e9c-9422-409f-9c00-2904af5c18fe",
+            "isActive": true,
+            "first_name": "Ruiz",
+            "last_name": "Leon",
+            "age": 27,
+            "gender": "male",
+            "eyeColor": "blue",
+            "picture": "http://placehold.it/32x32",
+            "company": "PHEAST",
+            "email": "ruizleon@pheast.com",
+            "phone": "+1 (832) 443-3077",
+            "address": "506 Ainslie Street, Machias, New Mexico, 222",
+            "about": "Irure nisi amet dolore ex officia incididunt sint excepteur est minim reprehenderit aliqua labore voluptate. Duis minim incididunt ex officia ipsum aliqua. Eu proident ad consequat commodo enim aliqua excepteur eu culpa aute aute minim exercitation Lorem.\r\n",
+            "balance": "$3,161.54",
+            "registered": "2017-06-20T03:03:56 -02:00",
+            "latitude": -50.004894,
+            "longitude": 85.409735,
+            "tags": [
+                "aute",
+                "velit",
+                "magna",
+                "cillum",
+                "ex",
+                "do",
+                "officia"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Wilder Briggs"
+                },
+                {
+                    "id": 1,
+                    "name": "Lambert Rivers"
+                },
+                {
+                    "id": 2,
+                    "name": "Delgado Rasmussen"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 4 unread messages.",
+            "favoriteFruit": "banana"
+        },
+        {
+            "_id": "5e5504ad7ef72c3d8c4889ed",
+            "index": 6,
+            "api_key": "618cf4e4-eda0-4a96-9cf0-7355da5da625",
+            "isActive": true,
+            "first_name": "Cornelia",
+            "last_name": "Freeman",
+            "age": 37,
+            "gender": "female",
+            "eyeColor": "brown",
+            "picture": "http://placehold.it/32x32",
+            "company": "XYMONK",
+            "email": "corneliafreeman@xymonk.com",
+            "phone": "+1 (933) 529-3800",
+            "address": "541 Lake Avenue, Castleton, Northern Mariana Islands, 3910",
+            "about": "Mollit cupidatat aliquip amet esse minim consectetur dolor id duis sit consequat. In duis amet enim dolore qui commodo ad non ipsum velit. Minim officia officia veniam veniam officia deserunt. Incididunt anim minim ea labore ea aliqua ex sint eu velit occaecat ad pariatur ad. Et proident duis occaecat tempor adipisicing ad.\r\n",
+            "balance": "$2,877.19",
+            "registered": "2016-04-28T04:23:38 -02:00",
+            "latitude": -43.201794,
+            "longitude": 134.960604,
+            "tags": [
+                "adipisicing",
+                "et",
+                "culpa",
+                "laboris",
+                "sit",
+                "ad",
+                "ipsum"
+            ],
+            "friends": [{
+                    "id": 0,
+                    "name": "Kristin Bowers"
+                },
+                {
+                    "id": 1,
+                    "name": "Campbell Barnett"
+                },
+                {
+                    "id": 2,
+                    "name": "Wilma Puckett"
+                }
+            ],
+            "greeting": "Hello, undefined! You have 1 unread messages.",
+            "favoriteFruit": "banana"
+        }
+    ]
+}

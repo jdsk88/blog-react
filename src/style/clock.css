@@ -1,0 +1,82 @@
+
+.App-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px 5px 0px 0px;
+    display:flex;
+    margin-top: 4px;
+    margin-left: 12.5%;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+/* digital clock */
+
+div.clock{
+    width: max-content;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    padding-right: 2.5px;
+  }
+  
+  .title-clock{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(8, 0, 43, 0.856);
+    line-height: 0px;
+    font-family: lcd;
+    margin: 0px 0px 0px 0px;
+  }
+  
+  .title-clock:first-child{
+    border-left: rgb(45, 210, 240) 1.5px solid;
+    border-right: rgb(45, 210, 240) 0.5px solid;
+    border-top: rgb(45, 210, 240) 1.5px solid;
+    border-bottom: rgb(45, 210, 240) 1.5px solid;
+    border-radius: 5px 0px 0px 5px;  
+  }
+  .title-clock:nth-child(2){
+    border-left: rgb(45, 210, 240) 0.5px solid;
+    border-right: rgb(45, 210, 240) 0.5px solid;
+    border-top: rgb(45, 210, 240) 1.5px solid;
+    border-bottom:rgb(45, 210, 240) 1.5px solid;
+    border-radius: 0px 0px 0px 0px;  
+  }
+  .title-clock:nth-child(3){
+    border-left: rgb(45, 210, 240) 0.5px solid;
+    border-right: rgb(45, 210, 240) 0.5px solid;
+    border-top: rgb(45, 210, 240) 1.5px solid;
+    border-bottom: rgb(45, 210, 240) 1.5px solid;
+    border-radius: 0px 0px 0px 0px;
+  
+  }
+  .title-clock:last-child{
+    border-left:rgb(45, 210, 240) 0.5px solid;
+    border-right: rgb(45, 210, 240) 1.5px solid;
+    border-top: rgb(45, 210, 240) 1.5px solid;
+    border-bottom: rgb(45, 210, 240) 1.5px solid;
+    border-radius: 0px 5px 5px 0px;
+  }
+  #timeH, #timeM, #timeS{
+    color: rgb(45, 210, 240);
+    font-size: 30px;
+    font-family: lcd;
+    text-align: center;
+    line-height: 40px;
+  }
+  

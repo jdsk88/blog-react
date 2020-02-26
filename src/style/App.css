@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.App-header {
+  background-color:  #282c34;
+  /* height: %; */
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  /* position: fixed;
+  top:0;
+  left:0; */
+}
+
+.App-link {
+  color: #61dafb;
+}
