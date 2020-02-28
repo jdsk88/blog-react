@@ -6,7 +6,7 @@ class UsersList extends React.Component {
     users: []
   };
   componentDidMount() {
-    axios.get(`http://localhost:3000/users`)
+    axios.get(`http://192.168.0.193/users`)
       .then(res => {
         const users = res.data;
         this.setState({

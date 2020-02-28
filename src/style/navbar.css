@@ -1,40 +1,62 @@
 .navbar {
     width: 100vw;
-    height: 50px;
+    /* height: 50px; */
     position: fixed;
     bottom: 0;
     left: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: stretch;
+    /* align-items: center; */
     padding: 10px;
     padding-inline-start: 0;
     background-color: #282c34;
 }
 
+
+.navbar__options {
+    width: 8rem;
+    height: 32px;
+}
+.navbar_btn__touch_layer {
+    width: 16.66%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
 .navbar_btn {
-    width: 25%;
-    height: 75%;
-    font-size: 25px;
+    width: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
     color: whitesmoke;
     background-color: #282c34;
     /* border: #282c34 2px solid; */
-    /* line-height: 50px; */
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* justify-items: center; */
 }
 
+
+i {
+    width: 100%;
+    height: 75%;
+}
+a.navbar_btn {
+    /* padding:5px; */
+}
 label {
+    /* display: none; */
     height: 25%;
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.7rem;
+    /* text-align: left; */
+    margin-top: 5px;
     /* margin-left: auto;
     margin-right: auto; */
 }
@@ -54,8 +76,121 @@ label {
 .log-buttons {
     width: 100%;
     height: 100%;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+}
+
+.header-nav {
+    
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+#root > div > header > div > div.header-nav__power-btn {
+width: 2rem;
+    height: 42px;
+    width: 42px;
+    font-size: 2rem;
+    color: whitesmoke;
+    /* background-color: #1158e7; */
+    border:rgb(45, 210, 240) 1.5px solid;
+    border-radius: 5px;
+    line-height: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-self: center;
+    /* margin-left: auto; */
+    margin-right: 15px;
+    
+}
+
+#root > div > header > div > div.header-nav__power-btn > a > svg{
+    color: rgb(45, 210, 240);
+    padding-left: 5px;
+    line-height: 42px;
+    /* margin-left: auto;
+    margin-right: auto; */
+
+}
+a.header-nav__power-btn:hover {
+    font-size: 2rem;
+    color: rgb(45, 210, 240);
+}
+a.header-nav__power-btn:active {
+    font-size: 2rem;
+    color: rgb(45, 210, 240);
+}
+a.header-nav__power-btn.active {
+    height: 42px;
+    width: 42px;
+    font-size: 2rem;
+    color: rgb(45, 210, 240);
+    
+}
+
+
+.navbar__volume {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 150px;
+    height: 32px;
+}
+
+.navbar__volume_down_btn i {
+    width: 32px;
+    height: 32px;
+    color: red;
+}
+
+.navbar__volume_up_btn i {
+    width: 32px;
+    color: red;
+    height: 32px;
+}
+
+input.navbar__volume-slider {
+    width: 96px;
+    height: 32px;
+    color: red;
+}
+
+    
+input[type=range].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 5.95px 0;
+  background-color: #282c34;
+
+}
+input[type=range].slider:focus {
+  outline: none;
+}
+input[type=range].slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 20.1px;
+  cursor: pointer;
+  /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+  background: rgb(rgb(255, 235, 235));
+  border-radius: 25px;
+  border: 2.5px solid silver;
+}
+input[type=range].slider::-webkit-slider-thumb {
+  /* box-shadow: 8.5px 8.5px 15px #678972, 0px 0px 8.5px #73967f; */
+  border: 5px solid rgb(rgb(255, 255, 255));
+  height: 32px;
+  width: 32px;
+  /* background-image: url('../../data/img/navbar/slider.png'); */
+  border-radius: 32px;
+  background: gray;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8.45px;
 }

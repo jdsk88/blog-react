@@ -1,0 +1,11 @@
+.login-container {
+    overflow-y: scroll;
+    position: fixed;
+    top: 52px;
+    left: 0;
+    bottom: 52px;
+    width: 100vw;
+    padding:15px;
+    padding-inline-start: 0;
+    z-index: -1;
+  }

@@ -1,0 +1,79 @@
+/* *  {
+    outline: red solid 1px;
+} */
+.overflow {
+    overflow-y: hidden;
+
+}
+.lighting-container {
+    overflow-y: scroll;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    bottom: 70px;
+    width: 100vw;
+    /* padding: 15px; */
+    padding-bottom: 0;
+    /* padding-inline-start: 0; */
+    display: flex;
+/* flex-direction: column; */
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    box-sizing: border-box;
+    border: rgb(197, 197, 197) 5px solid;
+}
+
+.lighting__options_container {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    background-color: #282c34;
+    /* z-index: 1; */
+
+
+}
+
+.lighting__options {
+    width: 100%;
+    font-size: 2rem;
+    text-decoration: none;
+
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #282c34;
+    /* border: #282c34 2px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* justify-items: center; */
+}
+
+.lighting__options_flex {  
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.lighting-item {
+    padding-inline-start: 0;
+    border: rgb(90, 90, 90) 1px solid;
+    box-sizing: border-box;
+    background-color: rgb(199, 199, 199);
+
+}
+.lighting-item label {
+    width: 2rem;
+    height:25%;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+
+}

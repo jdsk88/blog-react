@@ -18,7 +18,7 @@ export default class AddUserForm extends React.Component {
       name: this.state.users
     };
 
-    axios.post(`http://localhost:3000/users`, { user })
+    axios.post(`http://192.168.0.193:3000/users`, { user })
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -28,9 +28,10 @@ export default class AddUserForm extends React.Component {
   render() {
     return (
       <div>
-       <div class="container">
+       <div class="form-container">
       <form class="user-add-form">
         <div class="form-header">SIGN UP!</div>
+        <div className="input-group">
         <input class="input" id="uname" type="text" placeholder="User Name" />
         <input
           class="input"
@@ -53,6 +54,7 @@ export default class AddUserForm extends React.Component {
         <input class="input" id="lname" type="text" placeholder="Last Name" />
         <input class="input" id="email" type="email" placeholder="e-mail" />
         <input class="input" id="tel" type="tel" placeholder="Phone number" />
+        
         <label class="form-header" for="sort">Choose default view</label>
         <select class="form-header" id="select" name="sort">
           <option value="oldest">Oldest posts</option>
@@ -61,6 +63,7 @@ export default class AddUserForm extends React.Component {
         <button class="btn btn-sm btn-success" type="submit">
           register user
         </button>
+        </div>
       </form>
       <div class="validation"></div>
     </div>
