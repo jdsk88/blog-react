@@ -14,13 +14,12 @@
     background-color: #282c34;
 }
 
-
 .navbar__options {
     width: 8rem;
     height: 32px;
 }
 .navbar_btn__touch_layer {
-    width: 16.66%;
+    width: 20%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -99,15 +98,15 @@ width: 2rem;
     font-size: 2rem;
     color: whitesmoke;
     /* background-color: #1158e7; */
-    border:rgb(45, 210, 240) 1.5px solid;
-    border-radius: 5px;
-    line-height: 42px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-self: center;
+    /* border:rgb(45, 210, 240) 1.5px solid; */
+    /* border-radius: 5px; */
+    /* line-height: 42px; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+    /* justify-self: center; */
     /* margin-left: auto; */
-    margin-right: 15px;
+    /* margin-right: 15px; */
     
 }
 

@@ -36,6 +36,9 @@
   text-align: center;
 
 }
+.user-data>img {
+  width: 10%;
+}
 
 .user-box__user-name {
   order: 8;

@@ -1,4 +1,4 @@
-.form__container {
+.add-article_form__container {
     width: 100vw;
     /* height: 100vh; */
     /* background-color: rgb(255, 184, 184); */
@@ -10,9 +10,10 @@
     bottom: 70px;
     box-sizing: border-box;
     border: rgb(197, 197, 197) 5px solid;
+    z-index: -1;
 }
 
-form {
+.add-article_form {
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -25,14 +26,14 @@ form {
 
 }
 
-.form__titles {
+.add-article_form__titles {
     display: flex;
     flex-direction: column;
     width: 50%;
     /* height: ; */
     box-sizing: border-box;
 }
-.form__inputs {
+.add-article_form__inputs {
     display: flex;
     flex-direction: column;
     width: 50%;

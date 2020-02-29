@@ -6,7 +6,7 @@ class UsersList extends React.Component {
     users: []
   };
   componentDidMount() {
-    axios.get(`http://192.168.0.193/users`)
+    axios.get(`http://192.168.0.193:3000/users`)
       .then(res => {
         const users = res.data;
         this.setState({
@@ -20,26 +20,30 @@ class UsersList extends React.Component {
       {this.state.users.map(user =>       
       <div className="users-box">
         <div className="user-data">
-          <div className="user-data__first-name"> FIRST NAME: {user.first_name} </div>
+          <div className="user-data__first-name"> User NAME: {user.user_name} </div>
+          <div className="user-data__user-id"> PASSWORD: {user.password} </div>
+          <div className="user-data__last-name"> first NAME: {user.first_name} </div>
           <div className="user-data__last-name"> LAST NAME: {user.last_name} </div>
-          <div className="user-data__age"> AGE: {user.age} </div>
-          <div className="user-data__gender"> GENDER: {user.gender} </div>
-          <div className="user-data__eye_color"> EYE COLOR: {user.eyeColor} </div>
-          <div className="user-data__picture"> PICTURE: {user.picture} </div>
-          <div className="user-data__company"> COMPANY: {user.company} </div>
           <div className="user-data__email"> EMAIL: {user.email} </div>
-          <div className="user-data__phone"> PHONE: {user.phone} </div>
-          <div className="user-data__address"> ADDRESS: {user.address} </div>
-          <div className="user-data__about"> ABOUT: {user.about} </div>
-          <div className="user-data__balance"> BALANCE: {user.balance} </div>
-          <div className="user-data__email"> EMAIL: {user.email} </div>
-          <div className="user-data__registration-date"> REGISTRATION DATE: {user.registred} </div>
-          <div className="user-data__tags"> TAGS: {user.tags} </div>
-          <div className="user-data__greetings"> {user.greeting} </div>
-          <div className="user-data__fruit"> I LIKE: {user.favoriteFruit} </div>
-          <div className="user-data__index"> INDEX: {user.index} </div>
-          <div className="user-data__user-id"> USER ID: {user._id} </div>
-          <div className="user-data__last-name"> API_KEY: {user.api_key} </div>
+          <div className="user-data__user-id"> USER ID: {user.id} </div>
+          <img src={user.file}/>
+          {/* <img src="/data/img/pic.png" alt="logo" /> */}
+          {/* <div className="user-data__age"> AGE: {user.age} </div> */}
+          {/* <div className="user-data__gender"> GENDER: {user.gender} </div> */}
+          {/* <div className="user-data__eye_color"> EYE COLOR: {user.eyeColor} </div> */}
+          {/* <div className="user-data__picture"> PICTURE: {user.picture} </div> */}
+          {/* <div className="user-data__company"> COMPANY: {user.company} </div> */}
+          {/* <div className="user-data__email"> EMAIL: {user.email} </div> */}
+          {/* <div className="user-data__phone"> PHONE: {user.phone} </div> */}
+          {/* <div className="user-data__address"> ADDRESS: {user.address} </div> */}
+          {/* <div className="user-data__about"> ABOUT: {user.about} </div> */}
+          {/* <div className="user-data__balance"> BALANCE: {user.balance} </div> */}
+          {/* <div className="user-data__registration-date"> REGISTRATION DATE: {user.registred} </div> */}
+          {/* <div className="user-data__tags"> TAGS: {user.tags} </div> */}
+          {/* <div className="user-data__greetings"> {user.greeting} </div> */}
+          {/* <div className="user-data__fruit"> I LIKE: {user.favoriteFruit} </div> */}
+          {/* <div className="user-data__index"> INDEX: {user.index} </div> */}
+          {/* <div className="user-data__last-name"> API_KEY: {user.api_key} </div> */}
         </div>
       </div>
       )}

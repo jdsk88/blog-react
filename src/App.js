@@ -15,11 +15,12 @@ function App() {
   
   return (
     <div className="App">
+      {/* <div className="res-not-supported"> */}
       <Router>
       <header className="App-header">
       <div className="header-nav">
         <Clock />  
-        <div className="header-nav__power-btn" ><NavLink to='/power' className=""><i class="fas fa-plus"></i><label></label></NavLink></div>
+        <div className="header-nav__power-btn" ><NavLink to='/power' className=""><i class="fas fa-ellipsis-v"></i><label></label></NavLink></div>
       </div>
         </header>
         <div>
@@ -36,14 +37,15 @@ function App() {
         </Switch>
         <div className="navbar">
             <NavLink to='/articles' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-newspaper"></i><label>news</label></div></NavLink>
-            <NavLink to='/videos' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fab fa-facebook-messenger"></i><label>videos</label></div></NavLink>
-            <NavLink to='/lighting' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-lightbulb"></i><label>lighting</label></div></NavLink>
-            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-music"></i><label>videos</label></div></NavLink>
+            <NavLink to='/videos' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fab fa-facebook-messenger"></i><label>messenger</label></div></NavLink>
+            {/* <NavLink to='/lighting' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-lightbulb"></i><label>lighting</label></div></NavLink> */}
+            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-music"></i><label>music</label></div></NavLink>
             <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-tv"></i><label>videos</label></div></NavLink>
-            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-ellipsis-v"></i><label>videos</label></div></NavLink>
+            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-cog"></i><label>videos</label></div></NavLink>
             </div>
         </div>
       </Router>
+      {/* </div> */}
     </div>
   );
 

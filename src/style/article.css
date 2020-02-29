@@ -1,25 +1,122 @@
 .articles-container{
     overflow-y: scroll;
     position: fixed;
-    top: 52px;
+    top: 130px;
     left: 0;
-    bottom: 52px;
+    bottom: 70px;
     width: 100vw;
     padding:15px;
     padding-bottom: 0;
     padding-inline-start: 0;
 }
+.article-container {
+    overflow-y: hidden;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 70px;
+    width: 100vw;
+    /* padding: 15px; */
+    padding-bottom: 0;
+    /* padding-inline-start: 0; */
+    display: flex;
+/* flex-direction: column; */
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    box-sizing: border-box;
+    border: rgb(197, 197, 197) 5px solid;
 
+}
 .aricle-box {
     
     border: black 1px solid;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     width: 90vw;
+    height: 31vh;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
     flex-wrap: wrap;
-    z-index: -1;
+    z-index: -2;
+}
+
+.article-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background:rgba(148, 216, 255, 0.603);
+}
+
+
+
+/* *  {
+    outline: red solid 1px;
+} */
+.overflow {
+    overflow-y: hidden;
+
+}
+
+
+.article__options_container {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    background-color: #282c34;
+    /* z-index: 1; */
+
+
+}
+
+.article__options {
+    width: 100%;
+    font-size: 2rem;
+    text-decoration: none;
+
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #282c34;
+    /* border: #282c34 2px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* justify-items: center; */
+}
+
+.article__options_flex {  
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.article-item {
+    padding-inline-start: 0;
+    border: rgb(90, 90, 90) 1px solid;
+    box-sizing: border-box;
+    background-color: rgb(199, 199, 199);
+
+}
+.article-item label {
+    width: 2rem;
+    height:25%;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+.article__options_select {
+    width: 50%;
+    background-color: #282c34;
+    color: whitesmoke;
+    text-align: center;
+
 }
