@@ -1,18 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 
-class MyForm extends React.Component {
+class AddArticle extends React.Component {
   state = {
     atitle: '',
     asubtite: '',
     abody: '',
-    file: null
+    afile: null
   }
   atitleChange = event => {  this.setState({ atitle: event.target.value});
 console.log(this.state.atitle)}
   asubtitleChange = event => {    this.setState({ asubtitle: event.target.value});
 console.log(this.state.asubtite)}
-  abodyChange = event => {  this.setState({ fname: event.target.value});
+  abodyChange = event => {  this.setState({ abody: event.target.value});
 console.log(this.state.abody)}
   afileChange = event => {  
       this.setState({ file: event.target.files[0], loaded: 0});
@@ -34,9 +34,9 @@ console.log(this.state.abody)}
     axios.post(`http://192.168.0.193:3000/articles`, // post request to json server 
     { 
       title: this.state.atitle,
-      subtitle: this.state.asubtite,
+      subtitle: this.state.asubtitle,
       body: this.state.abody,
-      file: "/pic.png"
+      file: "/logo192.png"
      })
       .then(res => {
         console.log(res);
@@ -61,7 +61,7 @@ console.log(this.state.abody)}
               <input type="text" name="abody" onChange={this.abodyChange} />
             </div>
           <div className="buttons">
-              <input type="file" name="file" onChange={this.afileChange} />
+              <input type="file" name="afile" onChange={this.afileChange} />
             <button type="submit" onClick={this.onClickHandler}>SEND FORM</button>
             </div>
         </form>
@@ -70,4 +70,4 @@ console.log(this.state.abody)}
     )
   }
 }
-export default MyForm
+export default AddArticle
