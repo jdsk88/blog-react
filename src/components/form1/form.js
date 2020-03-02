@@ -59,21 +59,21 @@ console.log(this.state.email)}
         <form onSubmit={this.handleSubmit}>
            <div className="form__titles">
               <p>User Name:</p>
-              <p>Password:</p>
-              <p>First Name:</p>
-              <p>Last Name:</p>
-              <p>Email:</p>
-              <p>File:</p>
-           </div>
-            <div className="form__inputs">
               <input type="text" name="uname" onChange={this.unameChange} />
+              <p>Password:</p>
               <input type="text" name="pwd" onChange={this.pwdChange} />
+              <p>First Name:</p>
               <input type="text" name="fname" onChange={this.fnameChange} />
+              <p>Last Name:</p>
               <input type="text" name="lname" onChange={this.lnameChange} />
+              <p>Email:</p>
               <input type="text" name="email" onChange={this.emailChange} />
-            </div>
-          <div className="buttons">
+              <p>File:</p>
               <input type="file" name="file" onChange={this.fileChange} />
+           </div>
+            {/* <div className="form__inputs"> */}
+            {/* </div> */}
+          <div className="buttons">
             <button type="submit" onClick={this.onClickHandler}>SEND FORM</button>
             </div>
         </form>

@@ -59,9 +59,9 @@ console.log(this.state.abody)}
               <input type="text" name="atitle" onChange={this.atitleChange} />
               <input type="text" name="asubtitle" onChange={this.asubtitleChange} />
               <input type="text" name="abody" onChange={this.abodyChange} />
+              <input type="file" name="afile" onChange={this.afileChange} />
             </div>
           <div className="buttons">
-              <input type="file" name="afile" onChange={this.afileChange} />
             <button type="submit" onClick={this.onClickHandler}>SEND FORM</button>
             </div>
         </form>

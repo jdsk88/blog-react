@@ -4,57 +4,58 @@
     /* background-color: rgb(255, 184, 184); */
     overflow-y: scroll;
     position: fixed;
-    top: 130px;
-    padding-top: 25%;
+    top: 127px;
+    /* padding-top: 25%; */
     left: 0;
     bottom: 70px;
     box-sizing: border-box;
     border: rgb(197, 197, 197) 5px solid;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 form {
-    position: fixed;
-    display: flex;
+    /* position: fixed; */
+    /* display: flex;
     flex-direction: row;
-    flex-wrap: wrap;  
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: auto;
-    padding-bottom: auto;
+    flex-wrap: wrap;   */
+    /* padding: 0; */
+    /* padding-top: auto; */
+    /* padding-bottom: auto; */
 
 }
 
 .form__titles {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    /* height: ; */
+    width: 100%;
+    /* height: 35px; */
     box-sizing: border-box;
 }
 .form__inputs {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    /* height: ; */
+    width: 100%;
+    height: 35px;
     box-sizing: border-box;
 }
 
 input[type='text'] {
     width: 100%;
-    height: 50px;
+    height: 20px;
     color: red;
     background-color: rgb(221, 221, 221);
 }
 input[type='switch'] {
     width: 100%;
-    height: 50px;
+    height: 20px;
     color: red;
     background-color: green;
 }
 p {
     width: 100%;
-    height: 50px;
+    height: 20px;
     margin: 0;
 }
 

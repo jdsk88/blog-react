@@ -5,20 +5,33 @@ import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-rou
 
 
 class Lighting extends React.Component{
+    constructor(props) {
+      super(props);
+      this.state = {isToggleOn: true};
   
+      // This binding is necessary to make `this` work in the callback
+      this.handleClick = this.handleClick.bind(this);
+    }
+  
+    handleClick() {
+      this.setState(state => ({
+        isToggleOn: !state.isToggleOn
+      }));
+    }
     render() {
       return (
-        <div class="power">
+        <div class="lighting">
 
         <Router> <div className="overflow">
         
-                <div class="power-container">
-                <div className="power__options_container">
+                <div class="lighting-container">
+                <div className="lighting__options_container">
                   <NavLink to='/signin' className="power__options_flex" ><div className="power__options"><i class="fas fa-lightbulb"></i><label>zone 1</label></div></NavLink>
                   <NavLink to='/signup' className="power__options_flex" ><div className="power__options"><i class="fas fa-lightbulb"></i><label>zone 2</label></div></NavLink>
                   <NavLink to='/users' className="power__options_flex" ><div className="power__options"><i class="fas fa-lightbulb"></i><label>zone 3</label></div></NavLink>
                   <NavLink to='/settings' className="power__options_flex" ><div className="power__options"><i class="fas fa-lightbulb"></i><label>zone 4</label></div></NavLink>
                 </div>
+                <button className="toggle" onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
                 </div>
                 </div>
                 <Switch>
