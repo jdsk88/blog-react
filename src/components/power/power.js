@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-rou
 import "../../style/power.css";
 // import Navbar from '../navbar/navbar';
 import AddUserForm from '../add_user_form/AddUserForm';
-import MyForm from '../form1/form';
 import LoginPage from '../login/login';
 import UsersList from '../user/UsersList';
 import AddArticle from '../add_article/add_article';
@@ -35,7 +34,7 @@ class Power extends React.Component{
               <Route exactly path='/users' component={UsersList} />
               <Route exactly path='/signin' component={LoginPage} />
               {/* <Route exactly path='/signup' component={AddUserForm} /> */}
-              <Route exactly path='/signup' component={MyForm} />
+              <Route exactly path='/signup' component={AddUserForm} />
 </Switch>
 </Router>
 
