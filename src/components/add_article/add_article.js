@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import api_url from '../../config';
 
 class AddArticle extends React.Component {
   state = {
@@ -31,7 +32,7 @@ console.log(this.state.abody)}
 
     event.preventDefault(); //prevent refresh after submit
 
-    axios.post(`http://192.168.0.193:3000/articles`, // post request to json server 
+    axios.post(api_url+'/articles', // post request to json server 
     { 
       title: this.state.atitle,
       subtitle: this.state.asubtitle,
@@ -51,14 +52,12 @@ console.log(this.state.abody)}
         <form onSubmit={this.handleSubmit}>
            <div className="form__titles">
               <p>Title:</p>
-              <p>Subtitle:</p>
-              <p>Body:</p>
-              <p>File:</p>
-           </div>
-            <div className="form__inputs">
               <input type="text" name="atitle" onChange={this.atitleChange} />
+              <p>Subtitle:</p>
               <input type="text" name="asubtitle" onChange={this.asubtitleChange} />
+              <p>Body:</p>
               <input type="text" name="abody" onChange={this.abodyChange} />
+              <p>File:</p>
               <input type="file" name="afile" onChange={this.afileChange} />
             </div>
           <div className="buttons">

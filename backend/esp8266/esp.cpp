@@ -138,7 +138,7 @@ void setup(void) {
   server.on("/s/1/0", []() {
     server.send(200, "text/plain", "/esp/s/1/0");
         Serial.println("s/1/0");
-
+        
   });
   server.on("/s/1/1", []() {
     server.send(200, "text/plain", "/esp/s/1/1");

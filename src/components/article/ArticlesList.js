@@ -3,12 +3,14 @@ import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 import AddArticle from '../add_article/add_article';
 import "../../style/article.css"
+import api_url from '../../config'
+
 class ArticlesList extends React.Component {
   state = {
     articles: []
   };
   componentDidMount() {
-    axios.get(`http://192.168.0.193:3000/articles`)
+    axios.get(api_url + `/articles`)
       .then(res => {
         const articles = res.data;
         console.log('fetch')

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import api_url from '../../config'
 class MyForm extends React.Component {
   state = {
     uname: '',
@@ -37,7 +37,7 @@ console.log(this.state.email)}
 
     event.preventDefault(); //prevent refresh after submit
 
-    axios.post(`http://192.168.0.193:3000/users`, // post request to json server 
+    axios.post(api_url + `/users`, // post request to json server 
     { 
     user_name: this.state.uname,
       password: this.state.pwd,

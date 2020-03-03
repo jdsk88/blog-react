@@ -81,5 +81,28 @@
       "file": "/pic.png",
       "id": 9
     }
+  ],
+  "articles": [
+    {
+      "title": "hhh",
+      "subtitle": "hhhh",
+      "body": "hhhhh",
+      "file": "/logo192.png",
+      "id": 1
+    },
+    {
+      "title": "hhh",
+      "subtitle": "hhhh",
+      "body": "hhhhh",
+      "file": "/logo192.png",
+      "id": 2
+    },
+    {
+      "title": "hhh",
+      "subtitle": "hhhh",
+      "body": "hhhhh",
+      "file": "/logo192.png",
+      "id": 3
+    }
   ]
 }
