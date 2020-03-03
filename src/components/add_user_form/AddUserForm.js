@@ -1,51 +1,88 @@
 import React from 'react';
 import axios from 'axios';
-import api_url from '../../config'
-class MyForm extends React.Component {
+import api_url from '../../config';
+
+class AddUserFrom extends React.Component {
   state = {
+    id: '',
+    api_key: '',
     uname: '',
     pwd: '',
+    email: '',
     fname: '',
     lname: '',
-    email: '',
-    file: null
+    age: '',
+    gender: '',
+    file: null,
+    joined: null
   }
+  
+  
   unameChange = event => {  this.setState({ uname: event.target.value});
-console.log(this.state.uname)}
+  console.log(this.state.uname)}
   pwdChange = event => {    this.setState({ pwd: event.target.value});
-console.log(this.state.pwd)}
+  console.log(this.state.pwd)}
   fnameChange = event => {  this.setState({ fname: event.target.value});
-console.log(this.state.fname)}
+  console.log(this.state.fname)}
   lnameChange = event => {  this.setState({ lname: event.target.value});
-console.log(this.state.lname)}
+  console.log(this.state.lname)}
   emailChange = event => {  this.setState({ email: event.target.value});
-console.log(this.state.email)}
+  console.log(this.state.email)}
   fileChange = event => {  
-      this.setState({ file: event.target.files[0], loaded: 0});
-      const data = new FormData() 
-      data.append('file', this.state.selectedFile)
+    this.setState({ file: event.target.files[0], loaded: 0});
+    const data = new FormData() 
+    data.append('file', this.state.selectedFile)
     console.log(event.target.files[0])
     console.log(this.state.selectedFile)
-    }
+  }
+  
+  onClickHandler = () => {
     
-    onClickHandler = () => {
-        
-    }
- 
+  }
 
+
+
+  api_key_Generator()
+{
+	var time = new Date().getTime();
+	
+	if( window.performance && typeof window.performance.now === "function" )
+	{
+		time += performance.now();
+	}
+	
+	var key = 'xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx'.replace(/[xy]/g, function(count)
+	{
+		var str = (time + Math.random()*16)%16 | 0;
+		time = Math.floor(time/16);
+		return (count=='x' ? str : (str&0x3|0x8)).toString(16);
+	});
+
+return key;
+}
+
+
+  
   handleSubmit = event => {
-
+    
     event.preventDefault(); //prevent refresh after submit
-
+    
     axios.post(api_url + `/users`, // post request to json server 
     { 
-    user_name: this.state.uname,
+      id: '',
+      api_key: this.api_key_Generator(this.key),
+      user_name: this.state.uname,
       password: this.state.pwd,
+      email: this.state.email,
       first_name: this.state.fname,
       last_name: this.state.lname,
-      email: this.state.email,
-      file: "/pic.png"
-     })
+      age: this.state.age,
+      gender: this.state.gender,
+      file: "/pic.png",
+      joined: new Date(),
+      index: ' '
+
+    })
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -82,4 +119,4 @@ console.log(this.state.email)}
     )
   }
 }
-export default MyForm
+export default AddUserFrom

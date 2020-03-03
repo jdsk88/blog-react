@@ -1,198 +1,64 @@
 {
+  "articles": [],
   "users": [
     {
-      "user_name": "jdsk88",
-      "password": "hjjhjhjhj",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 1
-    },
-    {
-      "user_name": "jdsk88",
-      "password": "hjjhjhjhj",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 2
-    },
-    {
-      "user_name": "admin",
-      "password": "hjjhjhjhj",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 3
-    },
-    {
+      "id": 1,
+      "api_key": "",
       "user_name": "",
       "password": "",
+      "email": "",
       "first_name": "",
       "last_name": "",
-      "email": "",
-      "file": {},
-      "id": 4
-    },
-    {
-      "user_name": "jdsk88",
-      "password": "hjjhjhjhj",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
+      "age": "",
+      "gender": "",
       "file": "/pic.png",
-      "id": 5
+      "joined": "2020-03-03T19:45:43.090Z",
+      "index": " "
     },
     {
+      "id": 2,
+      "api_key": 0.9589856769700746,
       "user_name": "",
       "password": "",
+      "email": "",
       "first_name": "",
       "last_name": "",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "2020-03-03T19:47:32.979Z",
+      "index": " "
+    },
+    {
+      "id": 3,
+      "api_key": "7637eb04-19e7-4434-80ec-2d30d8670bd0",
+      "user_name": "",
+      "password": "",
       "email": "",
-      "file": "/pic.png",
-      "id": 6
-    },
-    {
-      "user_name": "",
-      "password": "",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 7
-    },
-    {
-      "user_name": "",
-      "password": "",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 8
-    },
-    {
-      "user_name": "jdsk88",
-      "password": "hjjhjhjhj",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 9
-    },
-    {
-      "user_name": "jdsk88",
-      "password": "",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
-      "file": "/pic.png",
-      "id": 10
-    },
-    {
-      "user_name": "aaa",
-      "password": "",
       "first_name": "",
       "last_name": "",
-      "email": "",
+      "age": "",
+      "gender": "",
       "file": "/pic.png",
-      "id": 11
+      "joined": "2020-03-03T19:51:30.159Z",
+      "index": " "
     },
     {
+      "id": 4,
+      "api_key": "59e37c-45fd25-42356b-e95316-b7cfa3",
       "user_name": "",
       "password": "",
-      "first_name": "Maciej",
-      "last_name": "Jakobszy",
-      "email": "maciejjakobszy@me.com",
+      "email": "",
+      "first_name": "",
+      "last_name": "",
+      "age": "",
+      "gender": "",
       "file": "/pic.png",
-      "id": 12
+      "joined": "2020-03-03T19:54:51.202Z",
+      "index": " "
     }
   ],
-  "articles": [
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 1
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 2
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 3
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 4
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 5
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 6
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 7
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 8
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 9
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 10
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 11
-    },
-    {
-      "title": "hhh",
-      "subtitle": "hhhh",
-      "body": "hhhhh",
-      "file": "/logo192.png",
-      "id": 12
-    }
-  ]
+  "login_info": [],
+  "movies": [],
+  "devices": []
 }

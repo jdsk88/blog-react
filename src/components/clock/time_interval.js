@@ -10,7 +10,7 @@ setInterval(function () {
     document.getElementById("timeS").innerText = timeS;
 }, 1000);
 // date interval
-setInterval(function () {
+// setInterval(function () {
     // const dateY = date.format(new Date(), "D/M/YYYY");
     // const dateM = date.format(new Date(), "MMMM");
     // const dateD = date.format(new Date(), "Z A");
@@ -19,4 +19,7 @@ setInterval(function () {
     //   document.getElementById("dateM").innerText = dateM;
     //   document.getElementById("dateD").innerText = dateD;
     //   document.getElementById("dateW").innerText = dateW;
-}, 1000);
+    // console.log(dateY)
+// }, 1000);
+// const static_date = date.format(new Date("DDDD MMMM YYYY HH:mm:ss"))
+console.log(new Date())

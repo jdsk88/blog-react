@@ -1,12 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 import "../../style/power.css";
-// import Navbar from '../navbar/navbar';
 import AddUserForm from '../add_user_form/AddUserForm';
 import LoginPage from '../login/login';
 import UsersList from '../user/UsersList';
 import AddArticle from '../add_article/add_article';
-// import ArticlesList from '../article/ArticlesList';
 
 console.log("power page loaded")
 
@@ -33,7 +31,6 @@ class Power extends React.Component{
               <Route  path='/add-article' component={AddArticle} />
               <Route exactly path='/users' component={UsersList} />
               <Route exactly path='/signin' component={LoginPage} />
-              {/* <Route exactly path='/signup' component={AddUserForm} /> */}
               <Route exactly path='/signup' component={AddUserForm} />
 </Switch>
 </Router>
