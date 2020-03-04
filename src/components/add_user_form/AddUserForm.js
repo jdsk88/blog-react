@@ -136,7 +136,7 @@ return key;
   render() {
     return (
       <div>
-        <div class="form__container">
+        <div className="form__container">
         <form onSubmit={this.handleSubmit}>
            <div className="form__titles">
               <p>User Name:</p>
