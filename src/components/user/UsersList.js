@@ -48,29 +48,42 @@ class UsersList extends React.Component {
     <thead>
       <tr>
         <th>ID</th>
-        {/* <th>Username</th> */}
+        <th>Photo</th>
+        <th>Username</th>
         {/* <th>PASSWORD</th> */}
         <th>Firstname</th>
         <th>Lastname</th>
-        {/* <th>Email</th> */}
+        <th>Email</th>
+        <th>Phone</th>
+        {/* <th>Age</th>
+        <th>Gender</th>
+        <th>Eye Color</th>
+        <th>Company name</th>
+        <th>api_key</th> */}
       </tr>
     </thead>
     <tbody>
     {this.state.users.map(user => 
         <tr>
         <td>{user.id}</td>
-        {/* <td>{user.user_name} </td> */}
+        <td><img src={user.file}/></td>
+        <td>{user.user_name} </td>
         {/* <td>{user.password}</td> */}
         <td>{user.first_name} </td>
         <td>{user.last_name}</td>
-        {/* <td>{user.email}</td> */}
+        <td>{user.email}</td>
+        <td>{user.phone}</td>
+        {/* <td>{user.age}</td>
+        <td>{user.gender}</td>
+        <td>{user.eyeColor}</td>
+        <td>{user.company}</td>
+        <td>{user.api_key}</td> */}
       </tr>
       )}
     </tbody>
   </table>
         </div>
       </div>
-      {/* )} */}
     </div>);
   }
 }

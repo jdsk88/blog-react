@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import date from "date-and-time";
 import api_url from '../../config';
 
 class AddUserFrom extends React.Component {
-  state = {
+  constructor(props){
+    super(props);
+  this.state = {
     id: '',
     api_key: '',
     uname: '',
@@ -13,10 +16,13 @@ class AddUserFrom extends React.Component {
     lname: '',
     age: '',
     gender: '',
+    sorting: '',
+    devices: '',
     file: null,
-    joined: null
+    joined: null,
+    index: null
   }
-  
+}
   
   unameChange = event => {  this.setState({ uname: event.target.value});
   console.log(this.state.uname)}
@@ -40,8 +46,6 @@ class AddUserFrom extends React.Component {
     
   }
 
-
-
   api_key_Generator()
 {
 	var time = new Date().getTime();
@@ -51,7 +55,7 @@ class AddUserFrom extends React.Component {
 		time += performance.now();
 	}
 	
-	var key = 'xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx'.replace(/[xy]/g, function(count)
+	var key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(count)
 	{
 		var str = (time + Math.random()*16)%16 | 0;
 		time = Math.floor(time/16);
@@ -61,12 +65,51 @@ class AddUserFrom extends React.Component {
 return key;
 }
 
+ 
+// validationForm() {
+//   let emptyFields = false;
+//   let passwordMatch = false;
+//   this.errors = [];
+//   if (
+//     this.userName.value.length > 0 &&
+//     this.passwd.value.length > 0 &&
+//     this.firstName.value.length > 0 &&
+//     this.lastName.value.length > 0 &&
+//     this.email.value.length > 0 &&
+//     this.phone.value.length > 0
+//   ) {
+//     emptyFields = true;
+//   } else {
+//     this.errors.push("empty fields");
+//     emptyFields = false;
+//   }
+
+//   if (this.passwordValidationForm()) {
+//     passwordMatch = true;
+//   } else {
+//     passwordMatch = false;
+//     this.errors.push("wrong password");
+//   }
+
+//   return emptyFields && passwordMatch ? true : false;
+// }
+// passwordValidationForm() {
+//   if (this.passwd.value === this.passwdValid.value) {
+//     return true;
+//   }
+//   return false;
+// }
+
+
 
   
   handleSubmit = event => {
+      event.preventDefault(); //prevent refresh after submit
     
-    event.preventDefault(); //prevent refresh after submit
-    
+// if (this.validationForm()){
+//   fetch(api_url + '/users?user_name=')
+// }
+
     axios.post(api_url + `/users`, // post request to json server 
     { 
       id: '',
@@ -78,9 +121,10 @@ return key;
       last_name: this.state.lname,
       age: this.state.age,
       gender: this.state.gender,
-      file: "/pic.png",
-      joined: new Date(),
-      index: ' '
+      file: '/pic.png',
+      // joined: new Date(),
+      joined: date.format(new Date,('dddd MMMM YYYY HH:MM:SS')),
+      index: ''
 
     })
       .then(res => {

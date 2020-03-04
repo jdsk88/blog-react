@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'digital7';
+  src: url('./fonts/digital-7.ttf') format('truetype');
+}
 
 .App-logo {
     width: 30px;
@@ -39,7 +43,6 @@ div.clock{
     height: 40px;
     background-color: rgba(8, 0, 43, 0.856);
     line-height: 0px;
-    font-family: lcd;
     margin: 0px 0px 0px 0px;
   }
   
@@ -75,7 +78,7 @@ div.clock{
   #timeH, #timeM, #timeS{
     color: rgb(45, 210, 240);
     font-size: 30px;
-    font-family: lcd;
+    font-family: digital7;
     text-align: center;
     line-height: 40px;
   }
