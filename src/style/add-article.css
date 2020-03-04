@@ -10,7 +10,7 @@
     bottom: 70px;
     box-sizing: border-box;
     border: rgb(197, 197, 197) 5px solid;
-    z-index: 1;
+    z-index: 0;
 }
 
 .add-article_form {

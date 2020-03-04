@@ -21,35 +21,25 @@ class ArticlesList extends React.Component {
   }
   render() {
     return (
-      <div class="article">
-
-      <Router> <div className="overflow">
-      
-              <div class="article-container">
-              <div className="article-box article__options_container">
-                <NavLink to='/add-article' className="article__options_flex" ><div className="article__options"><i class="fas fa-newspaper"></i><label>add article</label></div></NavLink>
-              <select className="article__options_select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              </div>
-              </div>
-              </div>
-              <Switch>
-                    <Route  path='/add-article' component={AddArticle} />
-      </Switch>
-      </Router>
+      <div>
     <div className="articles-container">
       {this.state.articles.map(article =>       
       <div className="aricle-box">
+      <img src={article.file}/>
         <div className="article-data">
+          <div className="aheader">
           <div className="article-data__title"> Article Title: {article.title} </div>
-          <div className="article-data__subtitle"> Article Subitle: {article.subtitle} </div>
-          <div className="article-data__subtitle"> Article body: {article.body} </div>
-          <img src={article.file}/>
+            <button> hide article</button>
+          </div>
+          <div className="ai article-data__subtitle"> Article Subitle: {article.subtitle} </div>
+          <div className="ai article-data__subtitle"> Article body: {article.body} </div>
+          <div className="comment">
+            <button type="submit"><i className=""/></button>
+            <button type="submit"><i className=""/></button>
+            <button type="submit"><i className=""/></button>
+            <input type="text" />
+            <button type="submit"><i className="fas fa-paper-plane"/></button>
+            </div>
           {/* <div className="article-data__date-of-post"> Article Posted:  {article.date} </div> */}
           {/* <div className="article-data__last-update"> Atricle Updated {article.last_update} </div> */}
           {/* <div className="article-data__likes"> Likes: {article.likes} </div> */}

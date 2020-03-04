@@ -37,7 +37,7 @@ console.log(this.state.abody)}
       title: this.state.atitle,
       subtitle: this.state.asubtitle,
       body: this.state.abody,
-      file: "/logo192.png"
+      file: "/canada.jpg"
      })
       .then(res => {
         console.log(res);
