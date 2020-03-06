@@ -5,7 +5,7 @@
 
 .App-header {
   background-color: #282c34;
-  /* height: %; */
+  height: 5%;
   width: 100%;
   /* padding: 10px; */
   display: flex;
@@ -21,4 +21,25 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.page-container{
+  width: 100vw;
+  height: 90vh;
+  position: fixed;
+  top: 5%;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+}
+
+
+.blabla {
+  color: red;
+  font-size: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+  height: 80vh;
+  text-justify: newspaper;
 }

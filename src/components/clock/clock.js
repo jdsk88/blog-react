@@ -7,8 +7,8 @@ function Clock() {
 // time interval
 setInterval(function () {
     //   const time = date.format(new Date(), "HH:mm:ss");
-    const timeH = date.format(new Date(), "HH");
-    const timeM = date.format(new Date(), "mm");
+    const timeH = date.format(new Date(), "HH" + " " + ":");
+    const timeM = date.format(new Date(), "mm" + " " + ":");
     const timeS = date.format(new Date(), "ss");
     document.getElementById("timeH").innerText = timeH;
     document.getElementById("timeM").innerText = timeM;

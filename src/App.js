@@ -11,6 +11,10 @@ import Video from './components/video/videoPlayer';
 import Form from './components/form/form'
 import Power from './components/power/power'
 import Lighting from './components/lighting/lighting'
+import Music from './components/music/music'
+import Videos from './components/videos/videos'
+import Settings from './components/settings/settings'
+import Messenger from './components/messenger/messenger'
 function App() {
   
   return (
@@ -19,29 +23,36 @@ function App() {
       <Router>
       <header className="App-header">
       <div className="header-nav">
-        <Clock />  
+        {/* <Clock />   */}
         <div className="header-nav__power-btn" ><NavLink to='/power' className=""><i className="fas fa-ellipsis-v"></i><label></label></NavLink></div>
       </div>
         </header>
-        <div>
+        <div className="page-container">
       <Switch>
               <Route exactly path='/articles' component={ArticlesList} />
               <Route exactly path='/users' component={UsersList} />
               <Route exactly path='/login' component={LoginPage} />
               <Route exactly path='/signup' component={AddUserForm} />
-              <Route exactly path='/video' component={Video} />
+              <Route exactly path='/videos' component={Videos} />
               <Route exactly path='/form' component={Form} />
-              <Route exactly path='/power' component={Power} />
+              <Route path='/power' render={() => 
+              <div>
+              <div className="blabla">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maxime eveniet hic exercitationem blanditiis! Totam doloribus obcaecati quisquam quo alias, perspiciatis minima minus? Sapiente id, saepe culpa reiciendis accusantium iste ea veritatis inventore iure totam doloremque dicta quisquam, minus eveniet, aliquid alias. Ducimus maiores nobis et veritatis dicta quo ex molestias, vero delectus ipsum dignissimos tenetur minus ipsa commodi amet. Eius aliquid cumque non placeat sequi sapiente ullam doloribus fugit at laboriosam eveniet mollitia quae, libero laudantium temporibus quis officia veritatis! Ad voluptate earum mollitia nisi, voluptatem assumenda quae consequuntur temporibus iste numquam possimus iusto autem architecto, consequatur dolorem ipsa!</p>
+              </div></div>}/>
               <Route exactly path='/lighting' component={Lighting} />
+              <Route exactly path='/music' component={Music} />
+              <Route exactly path='/settings' component={Settings} />
+              <Route exactly path='/messenger' component={Messenger} />
               <Route render={() => <h1>404: page not found</h1>} />
         </Switch>
-        <div className="navbar">
+        <div className="footer-navbar">
             <NavLink to='/articles' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-newspaper"></i><label>news</label></div></NavLink>
-            <NavLink to='/lighting' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fab fa-facebook-messenger"></i><label>messenger</label></div></NavLink>
+            <NavLink to='/messenger' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fab fa-facebook-messenger"></i><label>messenger</label></div></NavLink>
             {/* <NavLink to='/lighting' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-lightbulb"></i><label>lighting</label></div></NavLink> */}
-            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-music"></i><label>music</label></div></NavLink>
-            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-tv"></i><label>videos</label></div></NavLink>
-            <NavLink to='/' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-cog"></i><label>videos</label></div></NavLink>
+            <NavLink to='/music' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-music"></i><label>music</label></div></NavLink>
+            <NavLink to='/videos' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-tv"></i><label>videos</label></div></NavLink>
+            <NavLink to='/settings' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-cog"></i><label>setup</label></div></NavLink>
             </div>
         </div>
       </Router>

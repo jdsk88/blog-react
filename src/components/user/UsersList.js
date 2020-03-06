@@ -6,12 +6,13 @@ import axios from 'axios';
 // import AddArticle from '../add_article/add_article';
 import api_url from '../../config'
 import "../../style/users.css"
-import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
+// import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
 
 class UsersList extends React.Component {
   state = {
     users: []
   };
+  
   componentDidMount() {
     axios.get(api_url + `/users`)
       .then(res => {

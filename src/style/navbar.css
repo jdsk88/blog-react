@@ -1,19 +1,20 @@
-.navbar {
+.footer-navbar {
     width: 100vw;
-    /* height: 50px; */
+    height: 5%;
     position: fixed;
     bottom: 0;
     left: 0;
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: stretch; 
-    align-items: center;*/
+    align-items: center;
     padding: 0;
     padding-inline-start: 0;
-    background-color: #282c34;
-}
-
+    /* background-color: #282c34; */
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(194,194,194,1) 100%);
+  }
 .navbar__options {
     width: 8rem;
     height: 32px;
@@ -25,15 +26,30 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    border: #ffffff 2px solid;
+    /* border-radius: 5px; */
+    border-style: outset;
+}
+.navbar_btn__touch_layer:hover:active {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    border: #bebebe 2px solid;
+    /* border-radius: 5px; */
+    border-style: inset;
 }
 
 .navbar_btn {
-    width: 2rem;
-    font-size: 2rem;
+    width: 1.5rem;
+    /* width: 2rem; */
+    font-size: 1.5rem;
+    /* font-size: 2rem; */
     text-decoration: none;
     color: whitesmoke;
-    background-color: #282c34;
-    /* border: #282c34 2px solid; */
+    /* background-color: #282c34; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,12 +59,13 @@
 
 
 i {
+    background-color: slateblue;
     width: 100%;
     height: 75%;
 }
-a.navbar_btn {
-    /* padding:5px; */
-}
+/* a.navbar_btn {
+    padding:5px;
+} */
 label {
     /* display: none; */
     height: 25%;
@@ -60,15 +77,15 @@ label {
     margin-right: auto; */
 }
 
-.navbar_btn:hover {
+.navbar_btn:hover:active {
     color: rgb(45, 210, 240);
-    background-color: #282c34;
+    /* background-color: #282c34; */
     /* border: #282c34 2px solid; */
 }
 
 .navbar_btn:active {
-    color: rgb(45, 210, 240);
-    background-color: #282c34;
+    /* color: rgb(45, 210, 240); */
+    /* background-color: #282c34; */
     /* border: #282c34 2px solid; */
 }
 

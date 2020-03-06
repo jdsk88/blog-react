@@ -8,9 +8,9 @@
 .lighting-container {
     overflow-y: scroll;
     position: fixed;
-    top: 60px;
+    top: 42px;
     left: 0;
-    bottom: 70px;
+    bottom: 61px;
     width: 100vw;
     /* padding: 15px; */
     padding-bottom: 0;

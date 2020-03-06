@@ -24,7 +24,7 @@ class ArticlesList extends React.Component {
       <div>
     <div className="articles-container">
       {this.state.articles.map(article =>       
-      <div className="aricle-box">
+      <div key={article.id} className="aricle-box">
       <img src={article.file}/>
         <div className="article-data">
           <div className="aheader">
@@ -34,8 +34,8 @@ class ArticlesList extends React.Component {
           <div className="ai article-data__subtitle"> Article Subitle: {article.subtitle} </div>
           <div className="ai article-data__subtitle"> Article body: {article.body} </div>
           <div className="comment">
-            <button type="submit"><i className=""/></button>
-            <button type="submit"><i className=""/></button>
+            <button type="submit"><i className="far fa-thumbs-up"/></button>
+            <button type="submit"><i className="far fa-thumbs-down"/></button>
             <button type="submit"><i className=""/></button>
             <input type="text" />
             <button type="submit"><i className="fas fa-paper-plane"/></button>

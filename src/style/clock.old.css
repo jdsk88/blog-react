@@ -4,13 +4,12 @@
 }
 
 .App-logo {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 5px 5px 0px 0px;
-    /* display:flex; */
-    /* align-self: center; */
-    /* margin-top: 4px; */
-    /* margin-left: 12.5%; */
+    display:flex;
+    margin-top: 4px;
+    margin-left: 12.5%;
   }
   
   @media (prefers-reduced-motion: no-preference) {
@@ -32,38 +31,34 @@
 
 div.clock{
     width: max-content;
-    height: 3%;
+    height: 40px;
     display: flex;
     justify-content: space-around;
-    /* border-radius: 5px; */
-    /* padding-right: 2.5px; */
+    border-radius: 5px;
+    padding-right: 2.5px;
   }
   
   .title-clock{
-    width: 34px;
-    /* height: 1.5rem; */
+    width: 40px;
+    height: 40px;
     background-color: rgba(8, 0, 43, 0.856);
-    /* line-height: 0px; */
-    /* margin: 0px 0px 0px 0px; */
+    line-height: 0px;
+    margin: 0px 0px 0px 0px;
   }
-  /*
+  
   .title-clock:first-child{
     border-left: rgb(45, 210, 240) 1.5px solid;
     border-right: rgb(45, 210, 240) 0.5px solid;
     border-top: rgb(45, 210, 240) 1.5px solid;
     border-bottom: rgb(45, 210, 240) 1.5px solid;
     border-radius: 5px 0px 0px 5px;  
-    box-sizing: border-box;
   }
   .title-clock:nth-child(2){
     border-left: rgb(45, 210, 240) 0.5px solid;
     border-right: rgb(45, 210, 240) 0.5px solid;
     border-top: rgb(45, 210, 240) 1.5px solid;
     border-bottom:rgb(45, 210, 240) 1.5px solid;
-    border-radius: 0px 0px 0px 0px; 
-    box-sizing: border-box;
-
-
+    border-radius: 0px 0px 0px 0px;  
   }
   .title-clock:nth-child(3){
     border-left: rgb(45, 210, 240) 0.5px solid;
@@ -71,8 +66,6 @@ div.clock{
     border-top: rgb(45, 210, 240) 1.5px solid;
     border-bottom: rgb(45, 210, 240) 1.5px solid;
     border-radius: 0px 0px 0px 0px;
-    box-sizing: border-box;
-
   
   }
   .title-clock:last-child{
@@ -81,16 +74,12 @@ div.clock{
     border-top: rgb(45, 210, 240) 1.5px solid;
     border-bottom: rgb(45, 210, 240) 1.5px solid;
     border-radius: 0px 5px 5px 0px;
-    box-sizing: border-box;
-
-  } 
-
-   */
- 
+  }
   #timeH, #timeM, #timeS{
-    /* height: 10%; */
     color: rgb(45, 210, 240);
-    font-size: 1.5rem;
+    font-size: 30px;
     font-family: digital7;
     text-align: center;
+    line-height: 40px;
   }
+  
