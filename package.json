@@ -27,7 +27,7 @@
     "react-vp": "^1.2.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=9000 react-scripts start",
     "api": "node backend/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",

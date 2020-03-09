@@ -49,8 +49,8 @@ function App() {
         <div className="footer-navbar">
             <NavLink to='/articles' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-newspaper"></i><label>news</label></div></NavLink>
             <NavLink to='/messenger' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fab fa-facebook-messenger"></i><label>messenger</label></div></NavLink>
-            {/* <NavLink to='/lighting' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-lightbulb"></i><label>lighting</label></div></NavLink> */}
-            <NavLink to='/music' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-music"></i><label>music</label></div></NavLink>
+            <NavLink to='/lighting' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i class="fas fa-lightbulb"></i><label>lighting</label></div></NavLink>
+            {/* <NavLink to='/music' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-music"></i><label>music</label></div></NavLink> */}
             <NavLink to='/videos' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-tv"></i><label>videos</label></div></NavLink>
             <NavLink to='/settings' className="navbar_btn__touch_layer" ><div className="navbar_btn navbar_btn__LEFT" ><i className="fas fa-cog"></i><label>setup</label></div></NavLink>
             </div>
