@@ -1,5 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import Toggle from '../toggle/Toggle'
+import Slider from 'react-rangeslider'
+import 'react-rangeslider/lib/index.css'
+
 import "../../style/lighting.css";
 // import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 
@@ -50,9 +54,8 @@ class Lighting extends React.Component{
 <label>113</label>
        <button onClick={this.ledOn13}>led on</button>
        <button onClick={this.ledOff13}>led off</button>
-
-
-
+<Toggle />
+<Slider />
 
         {/* <Router> <div className="overflow">
         

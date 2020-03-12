@@ -23,7 +23,7 @@ function App() {
       <Router>
       <header className="App-header">
       <div className="header-nav">
-        {/* <Clock />   */}
+        <Clock />  
         <div className="header-nav__power-btn" ><NavLink to='/power' className=""><i className="fas fa-ellipsis-v"></i><label></label></NavLink></div>
       </div>
         </header>
@@ -35,11 +35,8 @@ function App() {
               <Route exactly path='/signup' component={AddUserForm} />
               <Route exactly path='/videos' component={Videos} />
               <Route exactly path='/form' component={Form} />
-              <Route path='/power' render={() => 
-              <div>
-              <div className="blabla">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maxime eveniet hic exercitationem blanditiis! Totam doloribus obcaecati quisquam quo alias, perspiciatis minima minus? Sapiente id, saepe culpa reiciendis accusantium iste ea veritatis inventore iure totam doloremque dicta quisquam, minus eveniet, aliquid alias. Ducimus maiores nobis et veritatis dicta quo ex molestias, vero delectus ipsum dignissimos tenetur minus ipsa commodi amet. Eius aliquid cumque non placeat sequi sapiente ullam doloribus fugit at laboriosam eveniet mollitia quae, libero laudantium temporibus quis officia veritatis! Ad voluptate earum mollitia nisi, voluptatem assumenda quae consequuntur temporibus iste numquam possimus iusto autem architecto, consequatur dolorem ipsa!</p>
-              </div></div>}/>
+              <Route path='/power' component={Power}/>
+              {/* <Route path='/power' render={() => <></>}/> */}
               <Route exactly path='/lighting' component={Lighting} />
               <Route exactly path='/music' component={Music} />
               <Route exactly path='/settings' component={Settings} />

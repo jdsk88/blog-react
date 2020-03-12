@@ -1,0 +1,23 @@
+.toggleActive{
+    background-color: yellow;
+    width: 100px;
+    height: 50px;
+    border-radius: 0 100% 100% 0;
+}
+.toggleNotActive{
+    background-color: green;
+    width: 100px;
+    height: 50px;
+    border-radius: 0 100% 100% 0;
+}
+
+#root > div > div > div.lighting > button.toggleActiveALL{
+    background-color: orange;
+    width: 250px;
+    height: 250px;
+}
+#root > div > div > div.lighting > button.toggleNotActiveALL{
+        background-color: blue;
+        width: 250px;
+        height: 250px;
+}
