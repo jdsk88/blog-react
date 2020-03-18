@@ -12,13 +12,16 @@ class Toggle extends React.Component {
       // This binding is necessary to make `this` work in the callback
       this.handleClick = this.handleClick.bind(this);
       this.handleClickALL = this.handleClickALL.bind(this);
-      this.led98ON = () => axios.get('http://192.168.0.198/led/1')
-      this.led98OFF = () => axios.get('http://192.168.0.198/led/0')
-      this.led13ON = () => axios.get('http://192.168.0.113/led/1')
-      this.led13OFF = () => axios.get('http://192.168.0.113/led/0')
-      this.led42ON = () => axios.get('http://192.168.0.142/led/1')
-      this.led42OFF = () => axios.get('http://192.168.0.142/led/0')
-      this.led142 = () => []
+      this.led98ON = () => fetch('http://192.168.0.198/led/1')
+      this.led98OFF = () => fetch('http://192.168.0.198/led/0')
+      this.led13ON = () => fetch('http://192.168.0.113/led/1')
+      this.led13OFF = () => fetch('http://192.168.0.113/led/0')
+      this.led42ON = () => fetch('http://192.168.0.142/led/1')
+      this.led42OFF = () => fetch('http://192.168.0.142/led/0')
+      this.rgbwON = () => fetch('http://192.168.0.161/s/ffffffff')
+      this.rgbwOFF = () => fetch('http://192.168.0.161/s/00000000')
+      this.lampON = () => fetch('http://192.168.0.195/s/1/1')
+      this.lampOFF = () => fetch('http://192.168.0.195/s/1/0')
     }
 
     handleClick() {
@@ -42,11 +45,15 @@ class Toggle extends React.Component {
             this.led98OFF();
             this.led42OFF();
             this.led13OFF();
+            this.rgbwOFF();
+            this.lampOFF();
             console.log('All Off')
         } else {
             this.led98ON();
             this.led42ON();
             this.led13ON();
+            this.rgbwON();
+            this.lampON();
             console.log('All On')
         }
       

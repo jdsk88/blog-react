@@ -1,0 +1,161 @@
+<pre>
+    <font color="#434f54">&#47;&#47;needed for library</font>
+    <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">ESP8266WebServer</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">DNSServer</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">WiFiManager</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;</font><u><font color="#434f54">https:&#47;&#47;github.com&#47;tzapu&#47;WiFiManager</font></u><font color="#434f54"></font>
+    <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#d35400">ESP8266WiFi</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#d35400">WiFiClient</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">ESP8266mDNS</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+    
+    <font color="#5e6d03">#ifndef</font> <font color="#000000">STASSID</font>
+    <font color="#5e6d03">#define</font> <font color="#000000">STASSID</font> <font color="#005c5f">&#34;UPCD3E63E2&#34;</font>
+    <font color="#5e6d03">#define</font> <font color="#000000">STAPSK</font> &nbsp;<font color="#005c5f">&#34;sV53jzKjwzsh&#34;</font>
+    <font color="#5e6d03">#endif</font>
+    
+    
+    <font color="#434f54">&#47;&#47; select which pin will trigger the configuration portal when set to LOW</font>
+    <font color="#434f54">&#47;&#47; ESP-01 users please note: the only pins available (0 and 2), are shared </font>
+    <font color="#434f54">&#47;&#47; with the bootloader, so always set them HIGH at power-up</font>
+    <font color="#5e6d03">#define</font> <font color="#000000">TRIGGER_PIN</font> <font color="#000000">0</font>
+    
+    <font color="#00979c">const</font> <font color="#00979c">char</font> <font color="#434f54">*</font><font color="#000000">ssid</font> <font color="#434f54">=</font> <font color="#000000">STASSID</font><font color="#000000">;</font>
+    <font color="#00979c">const</font> <font color="#00979c">char</font> <font color="#434f54">*</font><font color="#000000">password</font> <font color="#434f54">=</font> <font color="#000000">STAPSK</font><font color="#000000">;</font>
+    
+    <b><font color="#d35400">ESP8266WebServer</font></b> <font color="#000000">server</font><font color="#000000">(</font><font color="#000000">80</font><font color="#000000">)</font><font color="#000000">;</font>
+    
+    <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">switch1</font> <font color="#434f54">=</font> <font color="#000000">16</font><font color="#000000">;</font>
+    <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">switch2</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+    <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">switch3</font> <font color="#434f54">=</font> <font color="#000000">5</font><font color="#000000">;</font>
+    <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">switch4</font> &nbsp;<font color="#434f54">=</font> <font color="#000000">4</font><font color="#000000">;</font>
+    
+    <font color="#00979c">void</font> <font color="#000000">handleRoot</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;html&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;&lt;h1&gt;iSter servesp v.1&lt;&#47;h1&gt;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+    <font color="#000000">}</font>
+    
+    <font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#00979c">void</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;
+     &nbsp;<font color="#434f54">&#47;&#47; put your setup code here, to run once:</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">115200</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;\n Starting&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+    
+     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">TRIGGER_PIN</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">switch1</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">switch2</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">switch3</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">switch4</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch1</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch2</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch3</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch4</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">115200</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">WiFi</font></b><font color="#434f54">.</font><font color="#d35400">mode</font><font color="#000000">(</font><font color="#00979c">WIFI_STA</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">WiFi</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">ssid</font><font color="#434f54">,</font> <font color="#000000">password</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;
+     &nbsp;<font color="#5e6d03">while</font> <font color="#000000">(</font><b><font color="#d35400">WiFi</font></b><font color="#434f54">.</font><font color="#d35400">status</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#434f54">!=</font> <font color="#000000">WL_CONNECTED</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">500</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;.&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#000000">}</font>
+     &nbsp;
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;Connected to &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">ssid</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;IP address: &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><b><font color="#d35400">WiFi</font></b><font color="#434f54">.</font><font color="#d35400">localIP</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
+    
+     &nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;HTTP server started&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;&#34;</font><font color="#434f54">,</font> <font color="#000000">handleRoot</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;1&#47;1&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;switch 1 is on&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch1</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;1&#47;0&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;switch 1 is off&#34;</font> <font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch1</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+    
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;2&#47;1&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;switch 2 is on&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch2</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;2&#47;0&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;switch 2 is off&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch2</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;3&#47;1&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font><font color="#005c5f">&#34;switch 3 is on&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch3</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+    
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;3&#47;0&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;switch 3 is off&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch3</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;4&#47;1&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font><font color="#005c5f">&#34;switch 4 is on&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch4</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;4&#47;0&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;switch 4 is off&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch4</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;a&#47;1&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font><font color="#005c5f">&#34;all swiches on&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch1</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch2</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch3</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch4</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+     <font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">on</font><font color="#000000">(</font><font color="#005c5f">&#34;&#47;s&#47;a&#47;0&#34;</font><font color="#434f54">,</font> <font color="#000000">[</font><font color="#000000">]</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">send</font><font color="#000000">(</font><font color="#000000">200</font><font color="#434f54">,</font> <font color="#005c5f">&#34;text&#47;plain&#34;</font><font color="#434f54">,</font> <font color="#005c5f">&#34;all swiches off&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch1</font><font color="#434f54">,</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch2</font><font color="#434f54">,</font> <font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch3</font><font color="#434f54">,</font> <font color="#000000">3</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">switch4</font><font color="#434f54">,</font> <font color="#000000">4</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font><font color="#000000">)</font><font color="#000000">;</font>
+    <font color="#000000">}</font>
+    
+    
+    
+    
+    <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;<font color="#434f54">&#47;&#47; is configuration portal requested?</font>
+     &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font> <font color="#d35400">digitalRead</font><font color="#000000">(</font><font color="#000000">TRIGGER_PIN</font><font color="#000000">)</font> <font color="#434f54">==</font> <font color="#00979c">LOW</font> <font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;WiFiManager</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;Local intialization. Once its business is done, there is no need to keep it around</font>
+     &nbsp;&nbsp;&nbsp;<b><font color="#d35400">WiFiManager</font></b> <font color="#000000">wifiManager</font><font color="#000000">;</font>
+    
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;reset settings - for testing</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;wifiManager.resetSettings();</font>
+    
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;sets timeout until configuration portal gets turned off</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;useful to make it all retry or go to sleep</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;in seconds</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;wifiManager.setTimeout(120);</font>
+    
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;it starts an access point with the specified name</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;here &nbsp;&#34;AutoConnectAP&#34;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;and goes into a blocking loop awaiting configuration</font>
+    
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;WITHOUT THIS THE AP DOES NOT SEEM TO WORK PROPERLY WITH SDK 1.5 , update to at least 1.5.1</font>
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;WiFi.mode(WIFI_STA);</font>
+     &nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#434f54">!</font><font color="#000000">wifiManager</font><font color="#434f54">.</font><font color="#000000">startConfigPortal</font><font color="#000000">(</font><font color="#005c5f">&#34;OnDemandAP&#34;</font><font color="#000000">)</font><font color="#000000">)</font> <font color="#000000">{</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;failed to connect and hit timeout&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">3000</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;reset and try again, or maybe put it to deep sleep</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">ESP</font></b><font color="#434f54">.</font><font color="#d35400">reset</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">5000</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+    
+     &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;if you get here you have connected to the WiFi</font>
+     &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;connected...yeey :)&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;<font color="#000000">}</font>
+    
+     &nbsp;<font color="#000000">server</font><font color="#434f54">.</font><font color="#d35400">handleClient</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+     &nbsp;
+    
+    <font color="#000000">}</font>
+    
+    </pre>

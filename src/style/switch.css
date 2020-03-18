@@ -1,23 +1,33 @@
 .toggleActive{
     background-color: yellow;
-    width: 100px;
+    width: 50px;
     height: 50px;
-    border-radius: 0 100% 100% 0;
+    border-radius: 100%;
+    border: 3px solid silver;
+    border-style: inset;
 }
 .toggleNotActive{
     background-color: green;
-    width: 100px;
+    width: 50px;
     height: 50px;
-    border-radius: 0 100% 100% 0;
+    border-radius: 100%;
+    border: 3px solid silver;
+    border-style: outset;
 }
 
-#root > div > div > div.lighting > button.toggleActiveALL{
+.toggleActiveALL{
     background-color: orange;
-    width: 250px;
-    height: 250px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 3px solid silver;
+    border-style: inset;
 }
-#root > div > div > div.lighting > button.toggleNotActiveALL{
-        background-color: blue;
-        width: 250px;
-        height: 250px;
+.toggleNotActiveALL{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 3px solid silver;
+    border-style: outset;
 }

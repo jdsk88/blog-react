@@ -2,11 +2,11 @@
     outline: red solid 1px;
 } */
 .overflow {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 
 }
 .lighting-container {
-    overflow-y: scroll;
+    overflow: scroll;
     position: fixed;
     top: 42px;
     left: 0;

@@ -1,4 +1,62 @@
 {
+  "lights": [
+    {
+      "id": 1,
+      "value": 50,
+      "label": "Światło 1",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 2,
+      "value": 50,
+      "label": "Światło 2",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 3,
+      "value": 20,
+      "label": "Światło 3",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 4,
+      "value": 70,
+      "label": "Światło 4",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 5,
+      "value": 20,
+      "label": "Światło 5",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 6,
+      "value": 80,
+      "label": "Światło 6",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 7,
+      "value": 80,
+      "label": "Światło 7",
+      "port": "59119",
+      "host": "127.0.0.1"
+    },
+    {
+      "id": 8,
+      "value": 80,
+      "label": "Światło 8",
+      "port": "59119",
+      "host": "127.0.0.1"
+    }
+  ],
   "articles": [
     {
       "title": "",
@@ -163,10 +221,304 @@
       "body": "",
       "file": "/canada.jpg",
       "id": 26
+    },
+    {
+      "title": "",
+      "body": "",
+      "file": "/canada.jpg",
+      "id": 27
+    },
+    {
+      "title": "julian",
+      "body": "",
+      "file": "/canada.jpg",
+      "id": 28
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "api_key": "bee5a143f6b625c5303654373c9bf5",
+      "user_name": "asdf",
+      "password": "123123",
+      "email": "maciejjakobszy@me.com",
+      "first_name": "Maciej",
+      "last_name": "Jakobszy",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Thursday March 2020 23:03:22",
+      "index": ""
+    },
+    {
+      "state": 52,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "api_key": "f462fa4072d6191d3fbc5aa8361f0c",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:66",
+      "index": ""
+    },
+    {
+      "id": 4,
+      "api_key": "f092b6cf6faa70ca9b40574b90b52b",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:57",
+      "index": ""
+    },
+    {
+      "id": 5,
+      "api_key": "3ba9b8dc5325700d038d17027c008c",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:76",
+      "index": ""
+    },
+    {
+      "id": 6,
+      "api_key": "d21b9047f536d372f5da4e9bc89f52",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:92",
+      "index": ""
+    },
+    {
+      "id": 7,
+      "api_key": "5c1c4aefa487f9a0aa92ffd33f2764",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:08",
+      "index": ""
+    },
+    {
+      "id": 8,
+      "api_key": "e7c76847c934f286451a31ed8094ee",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:25",
+      "index": ""
+    },
+    {
+      "id": 9,
+      "api_key": "e6d1c7c7f133191df553ccede5af97",
+      "user_name": "jdsk88",
+      "password": "ss",
+      "email": "sjs@ff.pl",
+      "first_name": "ss",
+      "last_name": "ss",
+      "age": "",
+      "gender": "",
+      "file": "/pic.png",
+      "joined": "Monday March 2020 21:03:41",
+      "index": ""
+    }
+  ],
   "login_info": [],
   "movies": [],
-  "devices": []
+  "devices": [
+    {
+      "id": 0,
+      "ip": "http://192.168.0.142",
+      "type": "switch",
+      "state": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        2,
+        3,
+        4,
+        5,
+        16,
+        7,
+        8,
+        9,
+        20,
+        21,
+        2,
+        3,
+        4,
+        52,
+        6,
+        7,
+        8,
+        9,
+        30,
+        31,
+        2,
+        3,
+        4,
+        35,
+        6,
+        7,
+        8,
+        39,
+        40,
+        41,
+        2,
+        3,
+        44,
+        5,
+        6,
+        7,
+        48,
+        9,
+        50,
+        51,
+        2,
+        3,
+        54,
+        5,
+        6,
+        57,
+        8,
+        9,
+        60,
+        61,
+        2,
+        36,
+        4,
+        5,
+        66,
+        7,
+        86,
+        9,
+        70,
+        71,
+        2,
+        73,
+        4,
+        75,
+        6,
+        77,
+        8,
+        79,
+        80,
+        81,
+        28,
+        3,
+        84,
+        58,
+        6,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "power": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "ip": "http://192.168.0.198",
+      "type": "switch",
+      "state": [],
+      "power": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "ip": "http://192.168.0.113",
+      "type": "switch",
+      "state": [],
+      "power": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "ip": "http://192.168.0.11",
+      "type": "dimmer",
+      "state": [],
+      "control": "DIMMER",
+      "power": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "ip": "http://192.168.0.12",
+      "type": "dimmer",
+      "state": [],
+      "control": "DIMMER",
+      "power": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "ip": "http://192.168.0.196",
+      "type": "switch-4",
+      "state": [],
+      "power": [
+        0,
+        1
+      ]
+    }
+  ]
 }

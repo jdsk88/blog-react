@@ -1,18 +1,15 @@
-const dgram = require('dgram');
-const server = dgram.createSocket('udp4');
+var PORT = 59119; // port na którym odbieramy dane
+var HOST = '127.0.0.1'; // adres serwera
+var dgram = require('dgram'); // modul datagram
+var server = dgram.createSocket('udp4'); //deklaracja servera
 
-server.on('error', (err) => {
-  console.log(`server error:\n${err.stack}`);
-  server.close();
+//nasłuchiwanie serwera
+server.on('listening', function() {
+  var address = server.address(); // podłączenie adresu serwera
+ console.log('UDP Server listening on ' + address.address + ':' + address.port); //
 });
-
-server.on('message', (msg, rinfo) => {
-  console.log(`server got:4 ${msg} from ${rinfo.address}:${rinfo.port}`);
+// odbieranie wiadomości
+server.on('message', function(message, remote) {
+ console.log(remote.address + ':' + remote.port +' - ' + message);
 });
-
-server.on('listening', () => {
-  const address = server.address();
-  console.log(`server listening ${address.address}:${address.port}`);
-});
-
-server.bind(22222);
+server.bind(PORT, HOST);
